@@ -2,7 +2,8 @@ open Verify ;;
 
 
 let test () =
-  Verify.verify_true "temp" true;
+  verify_true "temp" true;
+  verify_equals_int "Int equality " 1 2
 
 ;;
 
