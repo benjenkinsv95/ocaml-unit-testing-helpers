@@ -1,0 +1,8 @@
+"Rule: ocaml: ml -> cmo & cmi (%=verify_tests )": "\160\243\208\216\026\152o\192\217\176\245d\164\132\210\194"
+"Rule: ocaml: cmo* -> byte (%=verify_tests )": "E\213\2164\014\164`'B\132\202\167\193\0054\023"
+"Resource: /home/ben/ocaml-problem-sets/ocaml-unit-testing-helpers/verify_tests.ml": "\195]\024\224\250\253\030\016\018(\006\223\237g\022\006"
+"Rule: ocaml dependencies ml (%=verify_tests )": "\021\226\026x\193\191\245\198$\168l\"\194\186\210'"
+"Rule: ocaml: cmo* -> byte (%=verify )": "\006\005\209F\247\005\004=U\147M\151\"\n\231\""
+"Resource: /home/ben/ocaml-problem-sets/ocaml-unit-testing-helpers/verify.ml": "Cv!\023#\176\175\192S\201\023\152\137\168\238\190"
+"Rule: ocaml: ml -> cmo & cmi (%=verify )": "\223[\214\194[\029\179r\209jv\219\205 op"
+"Rule: ocaml dependencies ml (%=verify )": "\022xC\238$\254H\198U\012\212p\207M\200\178"

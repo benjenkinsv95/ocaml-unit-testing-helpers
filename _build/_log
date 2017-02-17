@@ -1,0 +1,12 @@
+### Starting build.
+# Target: verify_tests.ml.depends, tags: { extension:ml, file:verify_tests.ml, ocaml, ocamldep, quiet, strict-sequence, thread, traverse, warn(A-4-33-40-41-42-43-34-44) }
+ocamlfind ocamldep -modules verify_tests.ml > verify_tests.ml.depends
+# Target: verify.ml.depends, tags: { extension:ml, file:verify.ml, ocaml, ocamldep, quiet, strict-sequence, thread, traverse, warn(A-4-33-40-41-42-43-34-44) }
+ocamlfind ocamldep -modules verify.ml > verify.ml.depends # cached
+# Target: verify.cmo, tags: { byte, compile, extension:cmo, extension:ml, file:verify.cmo, file:verify.ml, implem, ocaml, quiet, strict-sequence, thread, traverse, warn(A-4-33-40-41-42-43-34-44) }
+ocamlfind ocamlc -c -thread -strict-sequence -w A-4-33-40-41-42-43-34-44 -o verify.cmo verify.ml # cached
+# Target: verify_tests.cmo, tags: { byte, compile, extension:cmo, extension:ml, file:verify_tests.cmo, file:verify_tests.ml, implem, ocaml, quiet, strict-sequence, thread, traverse, warn(A-4-33-40-41-42-43-34-44) }
+ocamlfind ocamlc -c -thread -strict-sequence -w A-4-33-40-41-42-43-34-44 -o verify_tests.cmo verify_tests.ml
+# Target: verify_tests.byte, tags: { byte, dont_link_with, extension:byte, file:verify_tests.byte, link, ocaml, program, quiet, strict-sequence, thread, traverse, warn(A-4-33-40-41-42-43-34-44) }
+ocamlfind ocamlc -linkpkg -thread verify.cmo verify_tests.cmo -o verify_tests.byte
+# Compilation successful.
