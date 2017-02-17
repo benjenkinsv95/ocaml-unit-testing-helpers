@@ -37,7 +37,7 @@ let verify_cmp (test_name : string)
   verify_strings condition test_name expected_display result_display;;
 
 
-(* Asserts that two objects are equal. *)
+(* Verifies that two objects are equal. *)
 let verify_equals (test_name : string)
                 (string_of_a : 'a -> string)
                 (expected : 'a)
@@ -82,7 +82,7 @@ let verify_equals_float (test_name : string)
 
 
 
-(* Asserts that two objects refer to the same object. *)
+(* Verifies that two objects refer to the same object. *)
 let verify_same (test_name : string)
                 (string_of_a : 'a -> string)
                 (expected : 'a)
@@ -118,11 +118,11 @@ let verify_same_string (test_name : string)
                      : 'a = 
   verify_strings (expected == result) test_name expected result;; 
 
-(* Asserts that a condition is true. *)
+(* Verifies that a condition is true. *)
 let verify_true (test_name : string) (result : bool) : 'a =
   verify_equals_bool test_name true result;;
 
-(* Asserts that a condition is false. *)
+(* Verifies that a condition is false. *)
 let verify_false (test_name : string) (result : bool) : 'a =
   verify_equals_bool test_name false result;;
 
