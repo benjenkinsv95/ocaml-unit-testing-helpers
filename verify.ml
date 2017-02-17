@@ -26,7 +26,7 @@ let verify_strings (condition : bool)
 
 
 let verify_cmp (test_name : string)
-                (cmp: 'a -> 'a -> bool)
+                (cmp : 'a -> 'a -> bool)
                 (string_of_a : 'a -> string)
                 (expected : 'a)
                 (result : 'a)
@@ -45,20 +45,36 @@ let verify_equals (test_name : string)
               : 'b =
   verify_cmp test_name (=) string_of_a expected result;;
 
-let verify_equals_int (test_name : string) (expected : int) (result : int) : 'a =
+let verify_equals_int (test_name : string) 
+                      (expected : int) 
+                      (result : int)
+                    : 'a =
   verify_equals test_name string_of_int expected result;;
 
-let verify_equals_char (test_name : string) (expected : char) (result : char) : 'a =
+let verify_equals_char (test_name : string) 
+                       (expected : char) 
+                       (result : char) 
+                     : 'a =
   let string_of_char = fun my_char -> String.make 1 my_char in
   verify_equals test_name string_of_char expected result;;  
 
-let verify_equals_bool (test_name : string) (expected : bool) (result : bool): 'a = 
+let verify_equals_bool (test_name : string) 
+                       (expected : bool) 
+                       (result : bool) 
+                     : 'a = 
   verify_equals test_name string_of_bool expected result;;
 
-let verify_equals_string (test_name : string) (expected : string) (result : string): 'a = 
+let verify_equals_string (test_name : string) 
+                         (expected : string) 
+                         (result : string) 
+                       : 'a = 
   verify_strings (expected = result) test_name expected result;;  
 
-let verify_equals_float (test_name : string) (expected : float) (result : float) (epsilon : float): 'a = 
+let verify_equals_float (test_name : string)
+                        (expected : float)
+                        (result : float)
+                        (epsilon : float)
+                      : 'a = 
   let condition = (abs_float (expected -. result)) < epsilon in 
   let expected_display = string_of_float expected in
   let result_display = string_of_float result in
@@ -77,17 +93,29 @@ let verify_same (test_name : string)
 let verify_same_int (test_name : string) (expected : int) (result : int) : 'a =
   verify_same test_name string_of_int expected result;;
 
-let verify_same_float (test_name : string) (expected : float) (result : float) : 'a =
+let verify_same_float (test_name : string) 
+                      (expected : float) 
+                      (result : float) 
+                    : 'a =
   verify_same test_name string_of_float expected result;;
 
-let verify_same_char (test_name : string) (expected : char) (result : char) : 'a =
+let verify_same_char (test_name : string) 
+                     (expected : char) 
+                     (result : char) 
+                   : 'a =
   let string_of_char = fun my_char -> String.make 1 my_char in
   verify_same test_name string_of_char expected result;;  
 
-let verify_same_bool (test_name : string) (expected : bool) (result : bool): 'a = 
+let verify_same_bool (test_name : string) 
+                     (expected : bool) 
+                     (result : bool) 
+                   : 'a = 
   verify_same test_name string_of_bool expected result;;
 
-let verify_same_string (test_name : string) (expected : string) (result : string): 'a = 
+let verify_same_string (test_name : string)
+                       (expected : string)
+                       (result : string)
+                     : 'a = 
   verify_strings (expected == result) test_name expected result;; 
 
 (* Asserts that a condition is true. *)
@@ -100,7 +128,8 @@ let verify_false (test_name : string) (result : bool) : 'a =
 
 (* Fails a test with the given message. *)
 let fail (test_name : string) (message : string) : 'a =
-  Printf.fprintf stdout "%sTest '%s' failed. '%s'\n" red_text_code test_name message;;
+  Printf.fprintf stdout "%sTest '%s' failed. '%s'\n" 
+  red_text_code test_name message;;
 
 let verify_none (test_name : string) (opt : float option) : 'a =
   match opt with 
